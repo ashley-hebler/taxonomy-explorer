@@ -1,0 +1,30 @@
+.heading {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.list {
+    list-style: none;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.item {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.highlight {
+    color: var(--highlight);
+    font-weight: bold;
+}
+
+.link:hover {
+    color: #c36fff;
+}
