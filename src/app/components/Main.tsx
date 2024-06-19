@@ -6,6 +6,8 @@ import debounce from "lodash/debounce";
 import { fetchAPI } from "@/app/lib/api";
 import { isValidUrl } from "@/app/lib/utils";
 
+import { API_RESPONSE, TagOrCategory, Settings } from "@/app/types";
+
 import Toggler from "@/app/components/Toggler";
 import Examples from "@/app/components/Examples";
 import Loader from "@/app/components/Loader";
@@ -21,9 +23,14 @@ const Main = ({}) => {
     "Enter a domain to search for tags and categories"
   );
   const [isWordPress, setIsWordPress] = useState(false);
-  const [categories, setCategories] = useState([]);
-  const [tags, setTags] = useState([]);
-  const [siteInfo, setSiteInfo] = useState({});
+  const [categories, setCategories] = useState<TagOrCategory[]>([]);
+  const [tags, setTags] = useState<TagOrCategory[]>([]);
+  const [settings, setSettings] = useState<Settings>({
+    name: "",
+    description: "",
+    url: "",
+    site_icon_url: "",
+  });
 
   useEffect(() => {
     
@@ -71,7 +78,7 @@ const Main = ({}) => {
     }
   }, [query, startingExample]);
 
-  const handResults = (result) => {
+  const handResults = (result: API_RESPONSE) => {
     console.log(result);
     if (result.isForbidden) {
       setInstructions(
@@ -81,7 +88,7 @@ const Main = ({}) => {
       setInstructions("");
       setTags(result.tags);
       setCategories(result.categories);
-      setSiteInfo(result.settings);
+      setSettings(result.settings);
     } else {
       setInstructions("This site is not a WordPress site");
     }
@@ -118,7 +125,7 @@ const Main = ({}) => {
       />
       <p className={styles.instructions}>{insructions}</p>
       {loading && <div className={styles.loading}><Loader /></div>}
-      {categories.length > 0 && tags.length > 0 && (<section className={styles.results}><Toggler categories={categories} tags={tags} site={siteInfo} /></section>)}
+      {categories.length > 0 && tags.length > 0 && (<section className={styles.results}><Toggler categories={categories} tags={tags} site={settings} /></section>)}
       <Examples onSelection={setStartingExample} />
       
     </section>

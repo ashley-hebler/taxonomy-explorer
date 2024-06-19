@@ -6,8 +6,17 @@ export interface TagOrCategory {
 }
 
 export interface Settings {
-  title: string;
+  name: string;
   description: string;
   url: string;
-  logo: string;
+  site_icon_url: string;
+}
+
+export interface API_RESPONSE {
+  isWordPress: boolean;
+  isVip: boolean;
+  isForbidden: boolean;
+  categories: Array<TagOrCategory>;
+  tags: Array<TagOrCategory>;
+  settings: Settings;
 }

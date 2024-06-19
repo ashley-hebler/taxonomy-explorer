@@ -1,5 +1,10 @@
+import {TagOrCategory} from "@/app/types"; 
 import styles from "@/app/ui/list.module.css";
-const List = ({ data, label }) => {
+
+type ListProps = {
+  data: TagOrCategory[];
+};
+const List = ({ data }: ListProps) => {
   return (
     <section>
       <ul className={styles.list}>

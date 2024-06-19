@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import List from "@/app/components/List";
 import styles from "@/app/ui/toggler.module.css";
 
-interface Settings {
-  title: string;
-  description: string;
-  url: string;
-  logo: string;
-}
+import { Settings, TagOrCategory } from "@/app/types";
+type TogglerProps = {
+  categories: TagOrCategory[];
+  tags: TagOrCategory[];
+  site: Settings;
+};
 
 // checkbox toggle
-const Toggler = ({ categories, tags, site }) => {
+const Toggler = ({ categories, tags, site }: TogglerProps) => {
   const [selected, setSelected] = useState("categories");
   const createInitials = (name: string) => {
     const parts = name.split(" ");
@@ -33,7 +33,7 @@ const Toggler = ({ categories, tags, site }) => {
           )}
           {site.site_icon_url.length === 0 && (
             <div className={styles.avatar}>
-              <span>{createInitials(site.name)}</span>
+              <span className={styles.initials}>{createInitials(site.name)}</span>
             </div>
           )}
         </div>
@@ -89,9 +89,9 @@ const Toggler = ({ categories, tags, site }) => {
       </div>
 
       {selected === "categories" && (
-        <List data={categories} label="categories" />
+        <List data={categories} />
       )}
-      {selected === "tags" && <List data={tags} label="tags" />}
+      {selected === "tags" && <List data={tags} />}
     </div>
   );
 };

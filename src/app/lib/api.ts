@@ -1,4 +1,4 @@
-import { TagOrCategory, Settings } from "@/app/types";
+import { API_RESPONSE } from "@/app/types";
 
 import {
   WORDPRESS_STANDARD_PRE_PATH,
@@ -15,14 +15,6 @@ const API_URL = process.env.WORDPRESS_VIP;
 
 
 
-interface API_RESPONSE {
-  isWordPress: boolean;
-  isVip: boolean;
-  categories: Array<TagOrCategory>;
-  tags: Array<TagOrCategory>;
-  settings: Settings;
-}
-
 
 export async function fetchAPI(domain: string): Promise<API_RESPONSE> {
 
@@ -34,10 +26,11 @@ export async function fetchAPI(domain: string): Promise<API_RESPONSE> {
     categories: [],
     tags: [],
     settings: {
-      title: "",
+      name: "",
       description: "",
       url: "",
-      logo: ""
+      logo: "",
+      site_icon_url: "" // Add the missing property
     }
   };
 

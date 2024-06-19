@@ -4,10 +4,6 @@ export const MAINSREAM_SITES = [
     link: "https://techcrunch.com",
   },
   {
-    name: "Microsoft News",
-    link: "https://news.microsoft.com",
-  },
-  {
     name: "Mozilla Blog",
     link: "https://blog.mozilla.org",
   },
@@ -60,12 +56,12 @@ export const NEWSPACK_SITES = [
         link: "https://sanantonioreport.org"
     },
     {
-        name: "Cal Matters",
-        link: "https://calmatters.org"
+        name: "CalMatters",
+        link: "https://calmatters.org/"
     },
     {
         name: "Houston Landing",
-        link: "https://houstonlanding.com"
+        link: "https://houstonlanding.org"
     },
     {
         name: "The Hechinger Report",
@@ -108,10 +104,6 @@ export const NEWSPACK_SITES = [
         link: "https://montanafreepress.org/"
     },
     {
-        name: "Local News Matters",
-        link: "https://www.localnewsmatters.org/"
-    },
-    {
         name: "Daily Yonder",
         link: "https://dailyyonder.com/"
     },
@@ -126,10 +118,6 @@ export const NEWSPACK_SITES = [
     {
         name: "Island Times",
         link: "https://islandtimes.org"
-    },
-    {
-        name: "CalMatters",
-        link: "https://calmatters.org/"
     },
     {
         name: "Carolina Public Press",

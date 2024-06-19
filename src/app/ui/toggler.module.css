@@ -71,7 +71,6 @@
 }
 
 .logo {
-    margin-top: -1rem;
 }
 .avatar {
     width: 3rem;
@@ -80,8 +79,12 @@
     border: 4px solid #fff; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #333;
+    margin: -1rem auto 0;
+}
+
+.initials {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    height: 100%;
 }
