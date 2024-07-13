@@ -32,7 +32,7 @@ const Toggler = ({ categories, tags, site }: TogglerProps) => {
             />
           )}
           {site.site_icon_url.length === 0 && (
-            <div className={styles.avatar}>
+            <div className={`${styles.avatar} ${styles.avatarFallback}`}>
               <span className={styles.initials}>{createInitials(site.name)}</span>
             </div>
           )}

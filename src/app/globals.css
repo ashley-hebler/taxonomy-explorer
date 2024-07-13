@@ -6,10 +6,6 @@
   --border-radius: 40px;
   --gradient: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
   --gradient-size: 200% auto;
-  
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 }
 
 * {
@@ -25,7 +21,7 @@ body {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: var(--font-poppins), sans-serif;
   background-color: #262626;
   background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
   color: #fff;
@@ -40,4 +36,10 @@ a {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+input {
+  border: none;
+  border-bottom: 3px solid #c36fff;
+  border-image-source: var(--gradient);
 }

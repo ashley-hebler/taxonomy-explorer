@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { inter } from '@/app/ui/fonts';
+import { poppins } from '@/app/ui/fonts';
 import "./globals.css";
 
 
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.variable}>{children}</body>
     </html>
   );
 }

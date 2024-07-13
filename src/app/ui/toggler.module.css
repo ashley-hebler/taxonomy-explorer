@@ -82,6 +82,11 @@
     margin: -1rem auto 0;
 }
 
+.avatarFallback {
+    position: relative;
+    top: -1rem;
+}
+
 .initials {
     display: flex;
     align-items: center;

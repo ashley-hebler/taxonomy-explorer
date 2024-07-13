@@ -1,8 +1,5 @@
 .input {
   font-size: 1.5rem;
-  border: none;
-  border-bottom: 3px solid #c36fff;
-  border-image-source: var(--gradient);
   border-image-slice: 1;
   border-width: 3px;
   background: transparent;
@@ -18,7 +15,7 @@
   
 }
 .input::placeholder {
-  color: #fff;
+  color: #6c6c6c;
   opacity: 0.5;
 }
 
@@ -42,7 +39,7 @@
 
 @media screen and (min-width: 600px) {
   .input {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     width: 20ch;
   }
   .results {
