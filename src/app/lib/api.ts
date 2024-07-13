@@ -49,6 +49,8 @@ export async function fetchAPI(domain: string): Promise<API_RESPONSE> {
       info.isWordPress = true;
     }
     info.tags = await tagsResp.json();
+    // order by count
+    info.tags = info.tags.sort((a: any, b: any) => b.count - a.count);
   } catch (error) {
     console.error("Error fetching tags:", error);
     try {
@@ -73,6 +75,7 @@ export async function fetchAPI(domain: string): Promise<API_RESPONSE> {
   try {
     const catsResp = await fetch(STANDARD_CAT);
     info.categories = await catsResp.json();
+    info.categories = info.categories.sort((a: any, b: any) => b.count - a.count);
   } catch (error) {
     console.error("Error fetching categories:", error);
     try {

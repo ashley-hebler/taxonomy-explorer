@@ -31,6 +31,10 @@
     0 3.5px 6px hsla(230, 13%, 9%, 0.09);
 }
 
+.resultsLoading {
+  filter: blur(2px);
+}
+
 .instructions {
   margin-top: 0.5rem;
   color: #e3bcff;

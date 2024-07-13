@@ -1,23 +1,38 @@
 .heading {
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .list {
     list-style: none;
     text-align: left;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    counter-reset: ordered-list;
 }
 
 .item {
     padding: 1rem 2rem;
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item:before {
+	counter-increment: ordered-list;
+	content: counter(ordered-list);
+    color: var(--highlight);
+    font-size: .75rem;
+	
 }
 
 .item:last-child {
     border-bottom: none;
+}
+
+.title {
 }
 
 .highlight {
@@ -25,6 +40,14 @@
     font-weight: bold;
 }
 
+.link {
+    stroke: var(--highlight);
+    margin-left: auto 
+}
 .link:hover {
-    color: #c36fff;
+    color: var(--highlight);
+}
+
+.count {
+    justify-self: flex-end;
 }

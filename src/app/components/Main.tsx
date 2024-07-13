@@ -125,7 +125,7 @@ const Main = ({}) => {
       />
       <p className={styles.instructions}>{insructions}</p>
       {loading && <div className={styles.loading}><Loader /></div>}
-      {categories.length > 0 && tags.length > 0 && (<section className={styles.results}><Toggler categories={categories} tags={tags} site={settings} /></section>)}
+      {categories.length > 0 && tags.length > 0 && (<section className={`${styles.results} ${loading ? styles.resultsLoading : ""}`}><Toggler categories={categories} tags={tags} site={settings} /></section>)}
       <Examples onSelection={setStartingExample} />
       
     </section>

@@ -89,9 +89,9 @@ const Toggler = ({ categories, tags, site }: TogglerProps) => {
       </div>
 
       {selected === "categories" && (
-        <List data={categories} />
+        <List data={categories} label="categories" />
       )}
-      {selected === "tags" && <List data={tags} />}
+      {selected === "tags" && <List data={tags} label="tags" />}
     </div>
   );
 };
